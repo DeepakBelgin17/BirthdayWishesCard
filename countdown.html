@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown</title>
+<style>
+  body {
+    margin: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+  }
+
+  /* Define color classes */
+  .color1 { color: red; }
+  .color2 { color: blue; }
+  .color3 { color: green; }
+  .color4 { color: orange; }
+  .color5 { color: purple; }
+  .color6 { color: cyan; }
+  .color7 { color: magenta; }
+  .color8 { color: yellow; }
+  .color9 { color: brown; }
+  .color10 { color: black; }
+</style>
+</head>
+<body>
+  <div id="countdown">5</div>
+
+  <script>
+    let count = 10;
+
+    function countdown() {
+      document.getElementById('countdown').textContent = count;
+      document.getElementById('countdown').className = 'color' + count;
+      count--;
+      if (count >= 0) {
+        setTimeout(countdown, 1000);
+      } else {
+        //window.location.href = 'file:///D:/bd/quotes.html'; // Redirect to quotes.html using file URL
+        window.location.href = "Birthday wishes.html";
+
+      }
+    }
+
+    countdown();
+  </script>
+</body>
+</html>

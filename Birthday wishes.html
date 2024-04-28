@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Wishes quotes</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+  body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+
+
+
+  .quote-container {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  .quote {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .btn-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 25%;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - 30px);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .btn-arrow {
+    position: fixed;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
+    color: #007bff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .btn-arrow-left {
+    left: 20px;
+  }
+
+  .btn-arrow-right {
+    right: 20px;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  /* Gradient Background Colors */
+  #quote1 {
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+
+  }
+
+  #quote2 {
+    background: linear-gradient(to right, #9fb8ad, #98dafc);
+
+}
+
+
+  #quote3 {
+    background: linear-gradient(to right, #b8cbb8, #bce3c5);
+
+  }
+
+  #quote4 {
+    background: linear-gradient(to right, #96c93d, #00b09b);
+
+  }
+
+  #quote5 {
+    background: linear-gradient(to right, #2bc0e4, #eaecc6);
+
+  }
+.kal{
+font-size: 55px;
+}
+.ice{
+
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+}
+
+
+.highlighted-text
+ {
+  color: #4CAF50; /* Green color */
+  background-color: #FFFF00; /* Yellow background */
+  padding: 2px 4px; /* Add some padding for better visibility */
+  border-radius: 4px; /* Rounded corners */
+
+}
+
+.js{
+font-size: 38px;
+}
+
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote-container" id="quote1">
+      <div class="mt-1 ice">May this special day🌺 be wrapped with <br>Love💖 <br>Joy😊<br> Endless happiness🥳<br> Sprinkled with laughter😄<br> and filled with the warmth of cherished
+        moments✨ 🎂Happy Birthday🎈<br>  my friend!!! <br> <span class="highlighted-text">"Your friend name here..."</span>
+      </div>
+      <button class="btn-arrow btn-arrow-right" onclick="showNextQuote()">→</button>
+    </div>
+    <div class="quote-container " id="quote2">
+      <div class="quote mt-5 kal">Be<br> Strong🏋️‍♂️ <br>like<br> ELSA😊</div>
+      <button class="btn-arrow btn-arrow-left" onclick="showPrevQuote()">←</button>
+      <button class="btn-arrow btn-arrow-right" onclick="showNextQuote()">→</button>
+    </div>
+    <div class="quote-container" id="quote3">
+      <div class=" quote mt-5 kal" >Be <br> Positive✨ <br> like <br> ANNA👼</div>
+      <button class="btn-arrow btn-arrow-left" onclick="showPrevQuote()">←</button>
+      <button class="btn-arrow btn-arrow-right" onclick="showNextQuote()">→</button>
+    </div>
+    <div class="quote-container" id="quote4">
+      <div class="quote mt-3 kal">Be <br>Hope😎<br> &<br> Be<br> Confident😇</div>
+      <button class="btn-arrow btn-arrow-left" onclick="showPrevQuote()">←</button>
+      <button class="btn-arrow btn-arrow-right" onclick="showNextQuote()">→</button>
+    </div>
+    <div class="quote-container" id="quote5">
+      <div class="js"> A birthday is like a new year and my wish for you is a great year full of happiness and sunshine! ☀️🎉🎈</div>
+      <button class="btn-round" onclick="openNextPage()">Click this</button>
+      <button class="btn-arrow btn-arrow-left" onclick="showPrevQuote()">←</button>
+    </div>
+  </div>
+
+
+
+
+  <script>
+    let currentQuoteIndex = 1;
+    const totalQuotes = 5;
+
+    // Show the first quote initially
+    document.getElementById(`quote${currentQuoteIndex}`).style.display = 'block';
+
+    function showNextQuote() {
+      document.getElementById(`quote${currentQuoteIndex}`).style.display = 'none';
+      currentQuoteIndex = (currentQuoteIndex % totalQuotes) + 1;
+      document.getElementById(`quote${currentQuoteIndex}`).style.display = 'block';
+    }
+
+    function showPrevQuote() {
+      document.getElementById(`quote${currentQuoteIndex}`).style.display = 'none';
+      currentQuoteIndex = currentQuoteIndex === 1 ? totalQuotes : currentQuoteIndex - 1;
+      document.getElementById(`quote${currentQuoteIndex}`).style.display = 'block';
+    }
+
+    function openNextPage() {
+      // Redirect to another HTML page
+      window.location.href = 'Happy Birthday.html';
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
